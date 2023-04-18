@@ -1,17 +1,18 @@
 import fs from "fs";
+import { NextApiRequest, NextApiResponse } from "next";
 import path from "path";
 
-const buildFeedbackPath = () => {
+export const buildFeedbackPath = () => {
   return path.join(process.cwd(), "data", "feedback.json");
 };
 
-const extractFeedback = (filePath: string) => {
+export const extractFeedback = (filePath: string) => {
   const fileData = fs.readFileSync(filePath);
   const data = JSON.parse(fileData.toString());
   return data;
 };
 
-const handler = (req: any, res: any) => {
+const handler = (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
     const email = req.body.email;
     const feedback = req.body.text;

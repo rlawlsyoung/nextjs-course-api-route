@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-interface FeedbackType {
+export interface FeedbackType {
   id: string;
   email: string;
   text: string;
