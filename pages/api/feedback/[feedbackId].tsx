@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { buildFeedbackPath, extractFeedback } from "./feedback";
+import { buildFeedbackPath, extractFeedback } from ".";
 
-import { FeedbackType } from "..";
+import { FeedbackType } from "../..";
 
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
   const feedbackId = req.query.feedbackId;
